@@ -2,6 +2,8 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Header } from '@/components/Header'
 import {navConfig} from "@/config/menu";
+import {Layout} from "@/components/Layout";
+import {Footer} from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Blog Wilson',
@@ -17,7 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-primary text-gray-100">
         <Header items={navConfig.items}/>
-        {children}
+        <Layout>
+          <div className="pt-20">
+            {children}
+          </div>
+        </Layout>
+        <Footer items={navConfig.items} />
       </body>
     </html>
   )

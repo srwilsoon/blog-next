@@ -3,11 +3,11 @@ import {render, screen} from "@testing-library/react";
 import {Logo} from "@/components/Logo/index";
 
 describe('Logo', () => {
-    it('should render logo success', () => {
+    it('should render logo.png.png success', () => {
         render(<Logo/>)
         const logoText = screen.getByRole(
             'heading', {
-                name: 'Logo'
+                name: '2L-BLOG'
             }
         )
         expect(logoText).toBeVisible();

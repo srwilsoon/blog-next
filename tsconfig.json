@@ -14,17 +14,14 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
-        "paths": {
-            "@/*": ["./src/*"],
-            "contentlayer/generated": ["./.contentlayer/generated"]
-        },
         "plugins": [
             {
                 "name": "next"
             }
         ],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "contentlayer/generated": ["./.contentlayer/generated"]
         }
     },
     "include": [

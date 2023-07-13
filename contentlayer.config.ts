@@ -19,8 +19,9 @@ const Post = defineDocumentType(() => ({
     }
 }));
 
+//
 export default makeSource({
-    contentDirPath: './posts',
+    contentDirPath: "posts",
     documentTypes: [Post],
     onExtraFieldData: 'ignore',
     mdx: {

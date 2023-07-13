@@ -5,6 +5,20 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}'
   ],
+  safelist: [
+    {
+      pattern: /^grid-cols-/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl']
+    },
+    {
+      pattern: /^gap-/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl']
+    },
+    {
+      pattern: /^text-/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl', 'xs']
+    }
+    ],
   theme: {
     extend: {
       fontFamily: {
@@ -13,8 +27,8 @@ module.exports = {
       },
       colors: {
         primary: '#121214',
-        secundary: '#24292F',
-        link: '#9AA8F5'
+        secundary: '#282A27E8',
+        link: '#62f12d'
       }
     }
   },
