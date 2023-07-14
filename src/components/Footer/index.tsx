@@ -6,6 +6,8 @@ import {NavItem} from "@/types/header";
 import Link from "next/link";
 import {List} from "@/components/List";
 import {ListItem} from "@/components/List/components/ListItem";
+import {SocialMedia} from "@/components/SocialMedia";
+import {socialLinkConfig} from "@/config/socialLinks";
 
 type FooterProps = {
     items: NavItem[]
@@ -23,6 +25,7 @@ export const Footer = ({ items }:FooterProps) => {
                         </Section>
                         <Section role="contentinfo">
                             <SectionTitle>Redes</SectionTitle>
+                            <SocialMedia items={socialLinkConfig} />
                         </Section>
                         <Section role="contentinfo">
                             <SectionTitle>Sitemap</SectionTitle>

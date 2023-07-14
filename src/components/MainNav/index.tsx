@@ -13,23 +13,25 @@ import {NavProps} from "@/types/header";
 import Link from 'next/link';
 import {ToggleButton} from "@/components/MainNav/components/ToggleButton";
 import {useMainNav} from "@/hooks/useMainNav";
+import {List} from "@/components/List";
+import {ListItem} from "@/components/List/components/ListItem";
 
 export const MainNav = ({ items }: NavProps) => {
     const {isOpenMenu, handleToggleMenu} = useMainNav()
     return (
         <>
             <Nav>
-                <NavItem>
+                <List>
                     {
                         items.map((item, index) => {
                             return (
-                                <NavItemLink key={index} >
+                                <ListItem key={index} >
                                     <Link href={item.link}>{item.title}</Link>
-                                </NavItemLink>
+                                </ListItem>
                             )
                         })
                     }
-                </NavItem>
+                </List>
             </Nav>
             <Content>
                 <ToggleButton isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu} />

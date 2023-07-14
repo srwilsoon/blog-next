@@ -3,7 +3,7 @@ import {render, screen} from "@testing-library/react";
 import {Logo} from "@/components/Logo/index";
 
 describe('Logo', () => {
-    it('should render logo.png.png success', () => {
+    it('should render logo-1.png.png success', () => {
         render(<Logo/>)
         const logoText = screen.getByRole(
             'heading', {

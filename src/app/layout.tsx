@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="bg-primary text-gray-100">
         <Header items={navConfig.items}/>
         <Layout>
-          <div className="pt-20">
+          <div className="py-20">
             {children}
           </div>
         </Layout>

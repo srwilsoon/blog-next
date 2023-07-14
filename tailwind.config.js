@@ -26,8 +26,8 @@ module.exports = {
         foldit: ['Foldit', 'cursive']
       },
       colors: {
-        primary: '#121214',
-        secundary: '#282A27E8',
+        primary: '#201F26',
+        secondary: '#201F27',
         link: '#62f12d'
       }
     }

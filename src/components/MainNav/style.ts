@@ -1,5 +1,6 @@
 import tw from "tailwind-styled-components";
-
+import * as ContainerListItem from "@/components/List/components/ListItem/style";
+import * as ContainerList from "@/components/List/style";
 export const Nav = tw.nav`
     hidden
     lg:flex 
@@ -47,15 +48,13 @@ export const NavMobile = tw.nav`
     shadow-2xl
 `;
 
-export const NavMobileItem = tw.ul`
+export const NavMobileItem = tw(ContainerList.Container)`
     w-full
     flex-col
-    items-center
-    justify-center
     px-4
 `;
 
-export const NavMobileItemLink = tw.li`
+export const NavMobileItemLink = tw(ContainerListItem.Container)`
     border-b
     border-gray-600
     py-3

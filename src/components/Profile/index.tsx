@@ -6,7 +6,7 @@ export const Profile = ({ items }: SiteProps) => {
     return (
         <>
            <Image
-               src="/assets/images/logo.png"
+               src="/assets/images/logo-1.png"
                alt="profile"
                width={80}
                height={80}
