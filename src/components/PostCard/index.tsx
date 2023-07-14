@@ -1,39 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
-import {Tag} from "@/components/Tag";
-
-export const PostCard  = () => {
+import { Tag } from "@/components/Tag";
+import { BlogPost } from "@/types/BlogPosts";
+import { Content, Description, ImageContainer, TagsContainer, TimeContent, Title } from "@/components/PostCard/style";
+export const PostCard = ({ title, description, slug, tags, image, readingTime, date }: BlogPost) => {
     return (
         <>
-            <Link href="#" >
-                <div className="relative h-80 w-full">
+            <Link href={slug} >
+                <ImageContainer>
                     <Image
-                        src="/assets/images/post.jpeg"
+                        src={image}
                         fill
                         priority
                         className="rounded-xl object-cover object-center"
                         alt="title"
                     />
-                </div>
-                <div className="pt-3">
-                    <div className="mb-3 flex flex-wrap gap-2">
-                        {[ 'javascript', 'typescript', 'reactjs', 'nextjs', 'nodejs' ]
-                            .map((tag, index) =>
-                            (
-                                <Tag
-                                    key={index}
-                                    size="xs"
-                                >
-                                    {tag}
-                                </Tag>
-                            ))}
-                    </div>
-                    <time className="text-gray-400">
-                        12 de julho de 2023
-                    </time>
-                    <p className="mt-2 max-w-md text-ellipsis text-2xl font-medium text-gray-50">O que é SOLID</p>
-                    <p className="mt-3 text-gray-400">Vamos aprender um pouco sobre SOLID </p>
-                </div>
+                </ImageContainer>
+                <Content>
+                    <TagsContainer>
+                        {tags?.map((tag, index) =>
+                        (
+                            <Tag
+                                key={index}
+                                size="xs"
+                            >
+                                {tag}
+                            </Tag>
+                        ))}
+                    </TagsContainer>
+                    <TimeContent>
+                        {date} * {readingTime} min de leitura
+                    </TimeContent>
+                    <Title>{title}</Title>
+                    <Description>{description}</Description>
+                </Content>
             </Link>
         </>
     )

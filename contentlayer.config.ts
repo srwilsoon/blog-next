@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import readingTime from 'reading-time';
 
 const Post = defineDocumentType(() => ({
     name: 'Post',
@@ -16,6 +17,16 @@ const Post = defineDocumentType(() => ({
         date: { type: 'date', required: true },
         tags: { type: 'list', of: { type: 'string' } },
         image: { type: 'string', required: true }
+    },
+    computedFields: {
+        readingTime: {
+            type: 'json',
+            resolve: (content) =>  readingTime(content.body.raw),
+        },
+        slug: {
+            type: 'string',
+            resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx?$/, '')
+        }
     }
 }));
 
