@@ -1,5 +1,16 @@
 import tw from "tailwind-styled-components";
+import Link from "next/link";
 
+export const LinkContainer = tw(Link)`
+    hover:border-link
+    w-full
+    rounded-lg
+    border-2
+    border-transparent
+    transition-colors
+    duration-300
+    p-3
+`;
 export const ImageContainer = tw.div`
     relative 
     h-80 

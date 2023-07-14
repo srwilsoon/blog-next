@@ -8,7 +8,7 @@ export const navConfig: NavProps = {
         },
         {
             title: "Artigos",
-            link: "/article"
+            link: "/articles/:slug"
         },
         {
             title: "Sobre",

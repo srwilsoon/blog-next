@@ -6,7 +6,7 @@ export const siteConfig: ProfileProps = {
     url: "https://nextjs-blog.vercel.app/",
     image: "/images/og-image.png",
     twitter: "@nextjs_blog",
-    linkedin: "https://www.linkedin.com/in/wilson-lima-lucena/",
+    linkedin: "https://www.linkedin.com/in/owilsonlima/",
     github: "https://github.com/srwilsoon",
     author: "Wilson Lima",
     siteName: "NextJS Blog",

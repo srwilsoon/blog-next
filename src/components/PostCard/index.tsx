@@ -1,12 +1,19 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Tag } from "@/components/Tag";
 import { BlogPost } from "@/types/BlogPosts";
-import { Content, Description, ImageContainer, TagsContainer, TimeContent, Title } from "@/components/PostCard/style";
+import {
+    Content,
+    Description,
+    ImageContainer,
+    LinkContainer,
+    TagsContainer,
+    TimeContent,
+    Title
+} from "@/components/PostCard/style";
 export const PostCard = ({ title, description, slug, tags, image, readingTime, date }: BlogPost) => {
     return (
         <>
-            <Link href={slug} >
+            <LinkContainer href={`articles/${slug}`} >
                 <ImageContainer>
                     <Image
                         src={image}
@@ -34,7 +41,7 @@ export const PostCard = ({ title, description, slug, tags, image, readingTime, d
                     <Title>{title}</Title>
                     <Description>{description}</Description>
                 </Content>
-            </Link>
+            </LinkContainer>
         </>
     )
 }
