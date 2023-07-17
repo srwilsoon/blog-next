@@ -1,6 +1,7 @@
 import '@/styles/mdx.css'
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { MDXComponents } from 'mdx/types';
+import {Pre} from "@/components/Mdx/components/Pre";
 
 const components: MDXComponents = {
     h1: ({ className, children, ...props }) => (
@@ -59,9 +60,9 @@ const components: MDXComponents = {
 
 
     pre: ({ className, children, ...props }) => (
-        <pre className={`text-md mb-4 mt-6 overflow-x-auto rounded-lg py-4 bg-gray-600 ${className}`} {...props} >
+        <Pre  {...props} className={className} >
             {children}
-        </pre>
+        </Pre>
     ),
 
     code: ({ className, children, ...props }) => (
