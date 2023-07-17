@@ -6,6 +6,7 @@ export {
     GithubLogo as GithubIcon,
     YoutubeLogo as YoutubeIcon,
     ArrowLeft as ArrowLeftIcon,
+    ArrowRight as ArrowRightIcon,
     ArrowUp as ArrowUpIcon,
 } from '@phosphor-icons/react';
 

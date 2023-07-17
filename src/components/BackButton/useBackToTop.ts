@@ -3,11 +3,9 @@ import {useCallback, useEffect, useState} from "react";
 
 export const useBackToTop = () => {
     const [show , setShow] = useState(false);
-
     const [ lastScrowlVerticalPosition , setLastScrowlVerticalPosition ] = useState(0);
 
     const handleScroll = useCallback(() => {
-        const currentScrollVerticalPosition = window.pageYOffset;
         if (window.scrollY === 0) {
             setShow(false);
             return;
