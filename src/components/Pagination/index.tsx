@@ -13,22 +13,33 @@ type PaginationProps = {
     nextPage: string;
 }
 export const Pagination = ({ currentPage, numberOfPages,  nextPage, prevPage}: PaginationProps) => {
+    const isFirstPage = currentPage === 1;
+    const isLastPage = currentPage === numberOfPages;
+
     return (
         <>
             <Container>
-                <Link href={prevPage}>
-                    <PrevPageIcon />
-                    Página Anterior
-                </Link>
+                {
+                    !isFirstPage && (
+                        <Link href={prevPage}>
+                            <PrevPageIcon />
+                            Página Anterior
+                        </Link>
+                    )
+                }
 
                 <Text>
                     {currentPage} de {numberOfPages}
                 </Text>
 
-                <Link href={nextPage}>
-                    <NextPageIcon />
-                    Próxima página
-                </Link>
+                {
+                    !isLastPage && (
+                        <Link href={nextPage}>
+                            Próxima página
+                            <NextPageIcon />
+                        </Link>
+                    )
+                }
 
             </Container>
         </>

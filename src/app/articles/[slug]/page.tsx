@@ -5,5 +5,7 @@ type ArticleProps = {
     }
 }
 export default function Article({params}: ArticleProps) {
-    return (<PostaPage params={params}  />)
+    return (
+            <PostaPage params={params}  />
+    )
 }

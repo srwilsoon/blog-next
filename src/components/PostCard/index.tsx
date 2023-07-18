@@ -10,11 +10,17 @@ import {
     TimeContent,
     Title
 } from "@/components/PostCard/style";
-export const PostCard = ({ title, description, slug, tags, image, readingTime, date }: BlogPost) => {
+
+type PostCardProps = {
+    post : BlogPost;
+    isMain?: boolean;
+}
+export const PostCard = ({post, isMain = false} : PostCardProps) => {
+    const { title, description, slug, tags, image, readingTime, date } = post;
     return (
         <>
-            <LinkContainer href={`articles/${slug}`} >
-                <ImageContainer>
+            <LinkContainer href={`articles/${slug}`} isMain={isMain}>
+                <ImageContainer className={`${isMain && 'lg:mr-3'}`}>
                     <Image
                         src={image}
                         fill
@@ -23,7 +29,7 @@ export const PostCard = ({ title, description, slug, tags, image, readingTime, d
                         alt="title"
                     />
                 </ImageContainer>
-                <Content>
+                <Content className={`${isMain && 'lg:pt-0'}`}>
                     <TagsContainer>
                         {tags?.map((tag, index) =>
                         (

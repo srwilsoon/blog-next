@@ -2,11 +2,16 @@ import {allPosts} from "contentlayer/generated";
 import {BlogPost} from "@/types/BlogPosts";
 import {slugify} from "@/functions/slugify";
 import {formatDate} from "@/functions/date";
+import {paginationPosts} from "@/functions/pagination-posts";
 
+type GetPostAllParams = {
+    limit?: number;
+    currentPage?: number;
+}
 export const PostService = {
-    getAll:  ()=> {
+    getAll:  ({ limit = 10, currentPage = 1}: GetPostAllParams = {})=> {
          const posts =   allPosts.map((post) => {
-                return {
+             return {
                         slug: slugify(post.slug),
                         title: post.title,
                         readingTime: Math.ceil(post.readingTime.minutes),
@@ -18,12 +23,16 @@ export const PostService = {
                             code: post.body.code,
                             raw: post.body.raw,
                         }
-
                 }
             });
 
+        const numberOfPages = Math.ceil(posts.length / limit);
+        const paginatePosts = paginationPosts(posts, limit, currentPage);
+
          return {
-             posts: posts
+             posts: paginatePosts,
+             numberOfPages,
+             currentPage
          }
     },
 
