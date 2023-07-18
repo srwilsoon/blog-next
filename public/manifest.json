@@ -1,0 +1,21 @@
+{
+  "name": "Wilson Lima",
+  "short_name": "WL",
+  "icons": [
+    {
+      "src": "/assets/images/logo-1.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/logo-1.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#201f27",
+  "description": "Blog PWA",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#201f27"
+}

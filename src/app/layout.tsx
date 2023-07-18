@@ -6,9 +6,13 @@ import {Layout} from "@/components/Layout";
 import {Footer} from "@/components/Footer";
 import {BackToTop} from "@/components/BackToTop";
 
-export const metadata: Metadata = {
-  title: 'Blog Wilson',
-  description: 'Blog Wilson',
+export const metadata = {
+  title: {
+    template: '%s | Next.js Blog Starter',
+    default: 'Next.js Blog Starter',
+  },
+  description: 'Next.js Blog Starter',
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
