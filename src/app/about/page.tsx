@@ -1,5 +1,18 @@
 import {Container, Subtitle, Paragraph, Title} from "@/app/about/style";
+import {siteConfig} from "@/config";
 
+export const metadata = {
+    title: 'Sobre mim',
+    description: 'Sobre mim',
+    metadataBase: new URL(siteConfig.url),
+    openGraph: {
+        type: 'website',
+        title: 'Sobre mim',
+        url: '/about',
+        description: 'Sobre mim',
+        siteName: 'Sobre mim'
+    }
+};
 export default function About() {
     return (
         <Container>

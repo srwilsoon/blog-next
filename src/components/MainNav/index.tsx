@@ -16,7 +16,7 @@ import {useMainNav} from "@/hooks/useMainNav";
 import {List} from "@/components/List";
 import {ListItem} from "@/components/List/components/ListItem";
 
-export const MainNav = ({ items }: NavProps) => {
+export const MainNav = ({items}: NavProps) => {
     const {isOpenMenu, handleToggleMenu} = useMainNav()
     return (
         <>
@@ -25,7 +25,7 @@ export const MainNav = ({ items }: NavProps) => {
                     {
                         items.map((item, index) => {
                             return (
-                                <ListItem key={index} >
+                                <ListItem key={index}>
                                     <Link href={item.link}>{item.title}</Link>
                                 </ListItem>
                             )
@@ -34,7 +34,7 @@ export const MainNav = ({ items }: NavProps) => {
                 </List>
             </Nav>
             <Content>
-                <ToggleButton isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu} />
+                <ToggleButton isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu}/>
             </Content>
             {
                 isOpenMenu && (
@@ -44,7 +44,7 @@ export const MainNav = ({ items }: NavProps) => {
                                 {
                                     items.map((item, index) => {
                                         return (
-                                            <NavMobileItemLink key={index} >
+                                            <NavMobileItemLink key={index}>
                                                 <Link href={item.link}>{item.title}</Link>
                                             </NavMobileItemLink>
                                         )
@@ -55,6 +55,6 @@ export const MainNav = ({ items }: NavProps) => {
                     </ContainerMobile>
                 )
             }
-         </>
+        </>
     )
 }
